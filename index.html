@@ -97,7 +97,7 @@ button{font-family:var(--fb);cursor:pointer}
 .mmc.wa{background:var(--wa);color:#fff;margin-bottom:1rem}
 
 /* ── HERO ── */
-.hero{
+.hero{scroll-margin-top:90px;
   background:linear-gradient(145deg,#dff6f3 0%,#c8ede8 45%,#aee0d8 100%);
   padding:5.5rem 2.5rem 4.5rem;
   display:grid;grid-template-columns:1fr 1fr;gap:3rem;
@@ -509,7 +509,7 @@ h2 em{font-style:normal;color:var(--t)}
   .navbar{padding:.7rem 1.4rem}
   .nav-links,.nav-btn{display:none}
   .ham{display:flex}
-  .hero{grid-template-columns:1fr;padding:4rem 1.4rem 3rem;min-height:auto;text-align:center}
+  .hero{scroll-margin-top:90px;grid-template-columns:1fr;padding:4rem 1.4rem 3rem;min-height:auto;text-align:center}
   .hero::before,.hero::after{display:none}
   .hero-desc{margin:0 auto 2rem}
   .hero-btns{justify-content:center}
@@ -522,7 +522,7 @@ h2 em{font-style:normal;color:var(--t)}
   .doc-avatar{margin:0 auto}
   .doc-badges{justify-content:center}
   .loc-inner{grid-template-columns:1fr;padding:3.5rem 1.4rem}
-  .sec,.sec-full{padding:3.5rem 1.4rem}
+  .sec,.sec-full{scroll-margin-top:90px;padding:3.5rem 1.4rem}
   .footer{grid-template-columns:1fr}
   .footer-links{align-items:flex-start;margin-top:1rem}
 }
@@ -533,6 +533,9 @@ h2 em{font-style:normal;color:var(--t)}
   .m-foot{flex-direction:column}
   .hero h1{font-size:2.4rem}
 }
+
+/* ── SCROLL OFFSET — accounts for sticky navbar height ── */
+#services,#whyus,#doctor,#location{scroll-margin-top:95px}
 </style>
 </head>
 <body>
@@ -797,7 +800,10 @@ function goto(id){
   closeMenu();
   setTimeout(function(){
     var el=document.getElementById(id);
-    if(el)el.scrollIntoView({behavior:"smooth",block:"start"});
+    if(!el)return;
+    var navH=document.querySelector('.nav-wrap').offsetHeight;
+    var top=el.getBoundingClientRect().top+window.pageYOffset-(navH+8);
+    window.scrollTo({top:top,behavior:"smooth"});
   },80);
 }
 function toggleMenu(){document.getElementById("mobMenu").classList.toggle("open")}
