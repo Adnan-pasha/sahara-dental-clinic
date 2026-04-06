@@ -246,7 +246,7 @@ button{font-family:var(--fb);cursor:pointer}
   max-width:340px;width:100%;
   border:1px solid rgba(255,255,255,.8);
 }
-.hc-tooth{font-size:5rem;margin-bottom:.9rem;display:block;filter:drop-shadow(0 8px 16px rgba(42,168,155,.25))}
+.hc-tooth{margin-bottom:.9rem;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 8px 16px rgba(42,168,155,.25))}
 .hero-card h3{font-family:var(--fh);font-size:1.45rem;font-weight:700;color:var(--td);margin-bottom:.25rem}
 .hero-card p{font-size:.82rem;color:var(--mu);margin-bottom:1.6rem;line-height:1.55}
 .hc-divider{width:40px;height:3px;background:var(--t);border-radius:2px;margin:0 auto .9rem}
@@ -321,7 +321,7 @@ h2 em{font-style:normal;color:var(--t)}
 
 .svc-icon-wrap{
   width:56px;height:56px;background:var(--tl);border-radius:16px;
-  display:flex;align-items:center;justify-content:center;font-size:1.65rem;
+  display:flex;align-items:center;justify-content:center;
   transition:background .3s,transform .3s;
 }
 .svc-card:hover .svc-icon-wrap{background:var(--tm);transform:scale(1.08)}
@@ -349,7 +349,7 @@ h2 em{font-style:normal;color:var(--t)}
 }
 .why-card:hover{transform:translateY(-5px);box-shadow:var(--s2);border-color:var(--t)}
 .why-card:hover::after{opacity:1}
-.why-icon{font-size:2.2rem;margin-bottom:.8rem;display:block;position:relative;z-index:1}
+.why-icon{margin-bottom:.8rem;position:relative;z-index:1}
 .why-card h4{font-family:var(--fh);font-size:1.05rem;font-weight:700;color:var(--txt);margin-bottom:.4rem;position:relative;z-index:1}
 .why-card p{font-size:.8rem;color:var(--mu);line-height:1.58;position:relative;z-index:1}
 
@@ -373,7 +373,7 @@ h2 em{font-style:normal;color:var(--t)}
   width:150px;height:150px;
   background:rgba(255,255,255,.15);border-radius:50%;
   border:3px solid rgba(255,255,255,.3);
-  display:flex;align-items:center;justify-content:center;font-size:4.5rem;
+  display:flex;align-items:center;justify-content:center;
   flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,.2);
   backdrop-filter:blur(4px);
 }
@@ -404,7 +404,7 @@ h2 em{font-style:normal;color:var(--t)}
 }
 .loc-ico{
   width:36px;height:36px;background:var(--tl);border-radius:10px;
-  display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
 .loc-row strong{color:var(--txt)}
 .loc-btns{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap}
@@ -739,8 +739,22 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
 }
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .form-success{display:none;text-align:center;padding:1.5rem;color:#fff}
-.form-success .fs-icon{font-size:2.5rem;margin-bottom:.5rem;display:block}
+.form-success .fs-icon{margin-bottom:.5rem;display:flex;align-items:center;justify-content:center}
 .form-success p{font-size:.9rem;color:rgba(255,255,255,.9)}
+
+/* ── LUCIDE ICONS ── */
+.lc-icon{display:inline-flex;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none;flex-shrink:0;vertical-align:middle}
+.svc-icon-wrap .lc-icon{width:28px;height:28px;stroke:var(--td)}
+.why-icon{display:flex;align-items:center;justify-content:center}
+.why-icon .lc-icon{width:36px;height:36px;stroke:var(--td)}
+.loc-ico .lc-icon{width:18px;height:18px;stroke:var(--td)}
+.mmi .lc-icon{width:15px;height:15px;stroke:var(--td)}
+.btn-p .lc-icon,.btn-o .lc-icon,.mwa .lc-icon,.mcl .lc-icon,.btn-wa .lc-icon,.btn-cl .lc-icon,.btn-maps .lc-icon,.mmc .lc-icon{width:15px;height:15px}
+.db .lc-icon{width:12px;height:12px}
+.hc-tag .lc-icon{width:11px;height:11px}
+.footer-contact .lc-icon{width:13px;height:13px;stroke:rgba(255,255,255,.7)}
+.fs-icon .lc-icon{width:42px;height:42px;stroke:#fff}
+.ti .lc-icon{width:13px;height:13px}
 
 /* ── ACCESSIBILITY & MOTION ── */
 @media(prefers-reduced-motion:reduce){
@@ -863,7 +877,7 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
     saharadentalcare.in
   </a>
-  <span class="ti">📍 Doddaballapur, North Bangalore</span>
+  <span class="ti"><i data-lucide="map-pin" class="lc-icon"></i> Doddaballapur, North Bangalore</span>
 </div>
 
 <!-- NAV -->
@@ -890,15 +904,15 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
     </button>
   </nav>
   <div class="mob-menu" id="mobMenu">
-    <button class="mmi" onclick="showTab('home');closeMenu()">🏠 Home</button>
-    <button class="mmi" onclick="showTab('services');closeMenu()">🦷 Services</button>
-    <button class="mmi" onclick="showTab('whyus');closeMenu()">⭐ Why Choose Us</button>
-    <button class="mmi" onclick="showTab('reviews');closeMenu()">💬 Patient Reviews</button>
-    <button class="mmi" onclick="showTab('doctor');closeMenu()">👨‍⚕️ Our Doctor</button>
-    <button class="mmi" onclick="showTab('location');closeMenu()">📍 Location</button>
-    <button class="mmi" onclick="showTab('faq');closeMenu()">❓ FAQ</button>
-    <button class="mmc call" onclick="doCall()">📞 Call +91 63621 12257</button>
-    <button class="mmc wa"   onclick="doWA()">💬 WhatsApp Us</button>
+    <button class="mmi" onclick="showTab('home');closeMenu()"><i data-lucide="home" class="lc-icon"></i> Home</button>
+    <button class="mmi" onclick="showTab('services');closeMenu()"><i data-lucide="smile" class="lc-icon"></i> Services</button>
+    <button class="mmi" onclick="showTab('whyus');closeMenu()"><i data-lucide="star" class="lc-icon"></i> Why Choose Us</button>
+    <button class="mmi" onclick="showTab('reviews');closeMenu()"><i data-lucide="message-circle" class="lc-icon"></i> Patient Reviews</button>
+    <button class="mmi" onclick="showTab('doctor');closeMenu()"><i data-lucide="stethoscope" class="lc-icon"></i> Our Doctor</button>
+    <button class="mmi" onclick="showTab('location');closeMenu()"><i data-lucide="map-pin" class="lc-icon"></i> Location</button>
+    <button class="mmi" onclick="showTab('faq');closeMenu()"><i data-lucide="help-circle" class="lc-icon"></i> FAQ</button>
+    <button class="mmc call" onclick="doCall()"><i data-lucide="phone" class="lc-icon"></i> Call +91 63621 12257</button>
+    <button class="mmc wa"   onclick="doWA()"><i data-lucide="message-circle" class="lc-icon"></i> WhatsApp Us</button>
   </div>
 </div>
 
@@ -920,8 +934,8 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
     <p class="hero-slogan">Affordable Braces, Implants &amp; Smile Care — Serving North Bangalore &amp; Surrounding Areas</p>
     <p class="hero-desc">Welcome to <strong>Sahara Dental Care</strong> — your trusted dental clinic in <strong>Doddaballapur</strong>, committed to ethical, affordable, and advanced orthodontic care for all ages. Led by our <strong>team of specialists</strong>, making world-class dental treatment accessible to everyone in Doddaballapur and North Bangalore.</p>
     <div class="hero-btns">
-      <button class="btn-p" onclick="doWA()">💬 WhatsApp Us</button>
-      <button class="btn-o" onclick="doCall()"><span class="ring-icon">📞</span> Call Now</button>
+      <button class="btn-p" onclick="doWA()"><i data-lucide="message-circle" class="lc-icon"></i> WhatsApp Us</button>
+      <button class="btn-o" onclick="doCall()"><span class="ring-icon"><i data-lucide="phone" class="lc-icon"></i></span> Call Now</button>
     </div>
     <div class="hero-pills">
       <span class="hpill"><span class="chk">✓</span> No Hidden Costs</span>
@@ -931,16 +945,21 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
   </div>
   <div class="hero-right">
     <div class="hero-card">
-      <span class="hc-tooth">🦷</span>
+      <span class="hc-tooth">
+        <svg width="72" height="72" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 24 C20 15 27 10 34 13 C37 9 43 9 46 13 C53 10 60 15 60 24 C62 33 57 43 55 52 C53 61 52 70 49 73 C47 76 43 75 41 70 C40 65 40 59 40 59 C40 59 40 65 39 70 C37 75 33 76 31 73 C28 70 27 61 25 52 C23 43 18 33 20 24Z" fill="white" stroke="#1f8a7e" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M28 21 Q34 25 40 23 Q46 25 52 21" stroke="#1f8a7e" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+      </span>
       <h3>Sahara Dental Care</h3>
       <div class="hc-divider"></div>
       <p>Braces &amp; Implant Centre<br>Doddaballapur, North Bangalore</p>
       <div class="hc-tags">
-        <span class="hc-tag">🦷 Braces</span>
-        <span class="hc-tag">💎 Aligners</span>
-        <span class="hc-tag">⚙️ Implants</span>
-        <span class="hc-tag">✨ Cosmetic</span>
-        <span class="hc-tag">👶 Pediatric</span>
+        <span class="hc-tag"><i data-lucide="smile" class="lc-icon"></i> Braces</span>
+        <span class="hc-tag"><i data-lucide="gem" class="lc-icon"></i> Aligners</span>
+        <span class="hc-tag"><i data-lucide="settings-2" class="lc-icon"></i> Implants</span>
+        <span class="hc-tag"><i data-lucide="sparkles" class="lc-icon"></i> Cosmetic</span>
+        <span class="hc-tag"><i data-lucide="baby" class="lc-icon"></i> Pediatric</span>
       </div>
     </div>
     <div class="fbadge fb1"><span class="fdot"></span>Free Consultation</div>
@@ -970,49 +989,49 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
     </div>
     <div class="svc-grid">
       <div class="svc-card rv" onclick="openModal('ortho')">
-        <div class="svc-icon-wrap">😁</div>
+        <div class="svc-icon-wrap"><i data-lucide="smile" class="lc-icon"></i></div>
         <h3>Braces Treatment</h3>
         <p>Straighten your smile with modern braces at transparent, honest pricing — no surprises, just results.</p>
         <div class="svc-pills"><span class="sp">No Hidden Costs</span><span class="sp">Free Retainers</span><span class="sp">EMI Available</span><span class="sp">Same Day Appts</span></div>
         <div class="svc-more">Learn More <span>→</span></div>
       </div>
       <div class="svc-card rv" onclick="openModal('invisalign')">
-        <div class="svc-icon-wrap">💎</div>
+        <div class="svc-icon-wrap"><i data-lucide="gem" class="lc-icon"></i></div>
         <h3>Invisalign &amp; Clear Aligners</h3>
         <p>Discreet, removable aligners that straighten your teeth without anyone noticing — with a comparison chart included.</p>
         <div class="svc-pills"><span class="sp">Virtually Invisible</span><span class="sp">Removable</span><span class="sp">Comfortable</span></div>
         <div class="svc-more">Learn More + Comparison <span>→</span></div>
       </div>
       <div class="svc-card rv" onclick="openModal('implants')">
-        <div class="svc-icon-wrap">⚙️</div>
+        <div class="svc-icon-wrap"><i data-lucide="settings-2" class="lc-icon"></i></div>
         <h3>Dental Implants</h3>
         <p>Permanent, natural-looking replacements for missing teeth with the highest success rate achieved.</p>
         <div class="svc-pills"><span class="sp">Stress-Free Journey</span><span class="sp">Highest Success Rate</span></div>
         <div class="svc-more">Learn More <span>→</span></div>
       </div>
       <div class="svc-card rv" onclick="openModal('rct')">
-        <div class="svc-icon-wrap">🩺</div>
+        <div class="svc-icon-wrap"><i data-lucide="stethoscope" class="lc-icon"></i></div>
         <h3>Root Canal Treatment</h3>
         <p>Modern, pain-free root canal by a specialist endodontist — nothing to fear, everything to gain.</p>
         <div class="svc-pills"><span class="sp">Pain-Free</span><span class="sp">Specialist Endodontist</span></div>
         <div class="svc-more">Learn More <span>→</span></div>
       </div>
       <div class="svc-card rv" onclick="openModal('cosmetic')">
-        <div class="svc-icon-wrap">✨</div>
+        <div class="svc-icon-wrap"><i data-lucide="sparkles" class="lc-icon"></i></div>
         <h3>Smile Makeover &amp; Cosmetic Dentistry</h3>
         <p>Transform your smile with whitening, cleaning, veneers, and full cosmetic smile makeovers.</p>
         <div class="svc-pills"><span class="sp">Teeth Whitening</span><span class="sp">Teeth Cleaning</span><span class="sp">Smile Makeover</span></div>
         <div class="svc-more">Learn More <span>→</span></div>
       </div>
       <div class="svc-card rv" onclick="openModal('pediatric')">
-        <div class="svc-icon-wrap">👶</div>
+        <div class="svc-icon-wrap"><i data-lucide="baby" class="lc-icon"></i></div>
         <h3>Kids Braces &amp; Pediatric Dentistry</h3>
         <p>Gentle, child-friendly dental care that makes every visit positive and completely fear-free for kids.</p>
         <div class="svc-pills"><span class="sp">Child-Friendly</span><span class="sp">Gentle Care</span><span class="sp">Preventive Focus</span></div>
         <div class="svc-more">Learn More <span>→</span></div>
       </div>
       <div class="svc-card rv" onclick="openModal('tmj')">
-        <div class="svc-icon-wrap">🫀</div>
+        <div class="svc-icon-wrap"><i data-lucide="activity" class="lc-icon"></i></div>
         <h3>TMJ / Jaw Pain</h3>
         <p>Relief from jaw pain, clicking, headaches, and grinding treated by our dedicated TMJ specialists.</p>
         <div class="svc-pills"><span class="sp">Jaw Pain Relief</span><span class="sp">TMJ Specialists</span></div>
@@ -1033,11 +1052,11 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
     <h2>Why Doddaballapur Trusts <em>Sahara Dental Care</em></h2>
   </div>
   <div class="why-grid">
-    <div class="why-card rv"><span class="why-icon">💰</span><h4>No Hidden Costs</h4><p>Transparent pricing from day one. What we quote is exactly what you pay.</p></div>
-    <div class="why-card rv"><span class="why-icon">📅</span><h4>Same Day Appointments</h4><p>We value your time. Call us and get seen the very same day.</p></div>
-    <div class="why-card rv"><span class="why-icon">💳</span><h4>Interest-Free EMI</h4><p>Flexible payment plans making quality dental care accessible for all.</p></div>
-    <div class="why-card rv"><span class="why-icon">😌</span><h4>Pain-Free Experience</h4><p>Modern techniques and genuine care keeping you comfortable throughout.</p></div>
-    <div class="why-card rv"><span class="why-icon">👨‍⚕️</span><h4>Qualified Specialists</h4><p>Dedicated specialists — orthodontists, endodontists, implantologists.</p></div>
+    <div class="why-card rv"><span class="why-icon"><i data-lucide="shield-check" class="lc-icon"></i></span><h4>No Hidden Costs</h4><p>Transparent pricing from day one. What we quote is exactly what you pay.</p></div>
+    <div class="why-card rv"><span class="why-icon"><i data-lucide="calendar" class="lc-icon"></i></span><h4>Same Day Appointments</h4><p>We value your time. Call us and get seen the very same day.</p></div>
+    <div class="why-card rv"><span class="why-icon"><i data-lucide="credit-card" class="lc-icon"></i></span><h4>Interest-Free EMI</h4><p>Flexible payment plans making quality dental care accessible for all.</p></div>
+    <div class="why-card rv"><span class="why-icon"><i data-lucide="heart-pulse" class="lc-icon"></i></span><h4>Pain-Free Experience</h4><p>Modern techniques and genuine care keeping you comfortable throughout.</p></div>
+    <div class="why-card rv"><span class="why-icon"><i data-lucide="stethoscope" class="lc-icon"></i></span><h4>Qualified Specialists</h4><p>Dedicated specialists — orthodontists, endodontists, implantologists.</p></div>
   </div>
 </div>
 
@@ -1101,17 +1120,24 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
 <!-- DOCTOR -->
 <div class="doc-bg" id="doctor">
   <div class="doc-inner">
-    <div class="doc-avatar">👨‍⚕️</div>
+    <div class="doc-avatar">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.88)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+        <path d="M9 14.5 Q8 17.5 10 19"/>
+        <circle cx="10.2" cy="19.5" r="1.1" fill="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+      </svg>
+    </div>
     <div class="doc-info rv">
       <h3>Dr. Nazir Hussain</h3>
       <div class="doc-role">BDS, MDS &nbsp;·&nbsp; Braces &amp; Implant Specialist</div>
       <p>Driven by the vision to bring advanced dental care closer to semi-urban and rural communities, Dr. Nazir Hussain strives to make world-class orthodontic and dental treatment accessible to everyone. With deep expertise in braces and implants, his gentle, patient-first approach ensures every visit to Sahara Dental Care is comfortable, reassuring, and truly transformative.</p>
       <div class="doc-badges">
-        <span class="db">🦷 Orthodontics</span>
-        <span class="db">⚙️ Implantology</span>
-        <span class="db">💎 Invisalign</span>
-        <span class="db">✨ Cosmetic</span>
-        <span class="db">👶 Pediatric</span>
+        <span class="db"><i data-lucide="smile" class="lc-icon"></i> Orthodontics</span>
+        <span class="db"><i data-lucide="settings-2" class="lc-icon"></i> Implantology</span>
+        <span class="db"><i data-lucide="gem" class="lc-icon"></i> Invisalign</span>
+        <span class="db"><i data-lucide="sparkles" class="lc-icon"></i> Cosmetic</span>
+        <span class="db"><i data-lucide="baby" class="lc-icon"></i> Pediatric</span>
       </div>
     </div>
   </div>
@@ -1126,13 +1152,13 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
   <div class="loc-inner">
     <div class="rv">
       <h3 style="font-family:var(--fh);font-size:1.85rem;font-weight:700;color:var(--txt);margin-bottom:1.5rem">Best Dental Clinic in Doddaballapur &mdash; Find Us</h3>
-      <div class="loc-row"><div class="loc-ico">📍</div><div><strong>Sahara Dental Care</strong><br>Doddaballapur, North Bangalore,<br>Karnataka, India</div></div>
-      <div class="loc-row"><div class="loc-ico">📞</div><div>+91 63621 12257</div></div>
-      <div class="loc-row"><div class="loc-ico">🌐</div><div><a href="https://saharadentalcare.in" target="_blank" rel="noopener" style="color:var(--t);font-weight:600;text-decoration:none">saharadentalcare.in</a></div></div>
-      <div class="loc-row"><div class="loc-ico">🕐</div><div><strong>Mon – Sat:</strong> 9:00 AM – 8:00 PM<br><strong>Sunday:</strong> 10:00 AM – 2:00 PM</div></div>
+      <div class="loc-row"><div class="loc-ico"><i data-lucide="map-pin" class="lc-icon"></i></div><div><strong>Sahara Dental Care</strong><br>Doddaballapur, North Bangalore,<br>Karnataka, India</div></div>
+      <div class="loc-row"><div class="loc-ico"><i data-lucide="phone" class="lc-icon"></i></div><div>+91 63621 12257</div></div>
+      <div class="loc-row"><div class="loc-ico"><i data-lucide="globe" class="lc-icon"></i></div><div><a href="https://saharadentalcare.in" target="_blank" rel="noopener" style="color:var(--t);font-weight:600;text-decoration:none">saharadentalcare.in</a></div></div>
+      <div class="loc-row"><div class="loc-ico"><i data-lucide="clock" class="lc-icon"></i></div><div><strong>Mon – Sat:</strong> 9:00 AM – 8:00 PM<br><strong>Sunday:</strong> 10:00 AM – 2:00 PM</div></div>
       <div class="loc-btns">
-        <button class="btn-wa" onclick="doWA()">💬 WhatsApp</button>
-        <button class="btn-cl" onclick="doCall()">📞 Call Now</button>
+        <button class="btn-wa" onclick="doWA()"><i data-lucide="message-circle" class="lc-icon"></i> WhatsApp</button>
+        <button class="btn-cl" onclick="doCall()"><i data-lucide="phone" class="lc-icon"></i> Call Now</button>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:1.2rem">
@@ -1142,7 +1168,7 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
           width="100%" height="260" style="border:0;display:block" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade" title="Sahara Dental Care location"></iframe>
         <div style="padding:.8rem 1rem;display:flex;justify-content:center">
-          <button class="btn-maps" onclick="doMaps()">📍 Open in Google Maps</button>
+          <button class="btn-maps" onclick="doMaps()"><i data-lucide="map-pin" class="lc-icon"></i> Open in Google Maps</button>
         </div>
       </div>
     </div>
@@ -1199,7 +1225,7 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
       </div>
     </form>
     <div class="form-success" id="formSuccess">
-      <span class="fs-icon">✅</span>
+      <span class="fs-icon"><i data-lucide="circle-check" class="lc-icon"></i></span>
       <p><strong>Request received!</strong><br>We'll reach out to confirm your appointment via WhatsApp or call shortly.</p>
     </div>
   </div>
@@ -1217,12 +1243,12 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
     <p class="sec-sub">We are proud to be the trusted dental and orthodontic clinic for patients from across North Bangalore and surrounding areas.</p>
   </div>
   <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:3rem">
-    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)">&#128205; Doddaballapur</span>
-    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)">&#128205; Devanahalli</span>
-    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)">&#128205; Yelahanka</span>
-    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)">&#128205; Rajanukunte</span>
-    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)">&#128205; Gowribidanur</span>
-    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)">&#128205; North Bangalore Rural</span>
+    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)"><i data-lucide="map-pin" class="lc-icon" style="width:12px;height:12px;stroke:var(--t)"></i> Doddaballapur</span>
+    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)"><i data-lucide="map-pin" class="lc-icon" style="width:12px;height:12px;stroke:var(--t)"></i> Devanahalli</span>
+    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)"><i data-lucide="map-pin" class="lc-icon" style="width:12px;height:12px;stroke:var(--t)"></i> Yelahanka</span>
+    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)"><i data-lucide="map-pin" class="lc-icon" style="width:12px;height:12px;stroke:var(--t)"></i> Rajanukunte</span>
+    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)"><i data-lucide="map-pin" class="lc-icon" style="width:12px;height:12px;stroke:var(--t)"></i> Gowribidanur</span>
+    <span style="background:#fff;border:1.5px solid var(--bdr);border-radius:50px;padding:.55rem 1.4rem;font-size:.9rem;font-weight:600;color:var(--t)"><i data-lucide="map-pin" class="lc-icon" style="width:12px;height:12px;stroke:var(--t)"></i> North Bangalore Rural</span>
   </div>
   <div style="text-align:center;background:var(--tl);border-radius:16px;padding:1.2rem 2rem;font-size:.95rem;color:var(--td);font-weight:500;font-style:italic;border:1.5px solid var(--bdr)">
     Affordable braces and dental treatment in Doddaballapur &mdash; Namma nagarada trusted orthodontic care.
@@ -1307,10 +1333,10 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
   </div>
   <div class="footer-links">
     <div class="footer-contact">
-      <span onclick="doCall()">📞 +91 63621 12257</span>
-      <span onclick="doWA()">💬 WhatsApp Us</span>
-      <span onclick="doMaps()">📍 Doddaballapur, Bangalore</span>
-      <a href="https://saharadentalcare.in" target="_blank" rel="noopener" style="color:rgba(255,255,255,.7);text-decoration:none;font-size:.82rem;display:block;margin-top:.2rem">🌐 saharadentalcare.in</a>
+      <span onclick="doCall()"><i data-lucide="phone" class="lc-icon"></i> +91 63621 12257</span>
+      <span onclick="doWA()"><i data-lucide="message-circle" class="lc-icon"></i> WhatsApp Us</span>
+      <span onclick="doMaps()"><i data-lucide="map-pin" class="lc-icon"></i> Doddaballapur, Bangalore</span>
+      <a href="https://saharadentalcare.in" target="_blank" rel="noopener" style="color:rgba(255,255,255,.7);text-decoration:none;font-size:.82rem;display:block;margin-top:.2rem"><i data-lucide="globe" class="lc-icon"></i> saharadentalcare.in</a>
     </div>
     <div style="font-size:.74rem;color:rgba(255,255,255,.25);margin-top:1rem">© 2026 Sahara Dental Care</div>
   </div>
@@ -1337,12 +1363,13 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
       <div id="mExtra"></div>
     </div>
     <div class="m-foot">
-      <button class="mwa"  onclick="modalWA()">💬 WhatsApp Us</button>
-      <button class="mcl"  onclick="doCall()">📞 Call Now</button>
+      <button class="mwa"  onclick="modalWA()"><i data-lucide="message-circle" class="lc-icon"></i> WhatsApp Us</button>
+      <button class="mcl"  onclick="doCall()"><i data-lucide="phone" class="lc-icon"></i> Call Now</button>
     </div>
   </div>
 </div>
 
+<script src="https://unpkg.com/lucide@0.511.0/dist/umd/lucide.min.js"></script>
 <script>
 var PH="916362112257",PHONE="+916362112257";
 function doCall(){window.location.href="tel:"+PHONE}
@@ -1446,42 +1473,43 @@ document.addEventListener("click",function(e){
 });
 
 var SVC={
-  ortho:{icon:"😁",title:"Orthodontics & Braces",sub:"Straighten your smile with confidence",
+  ortho:{icon:'<i data-lucide="smile" class="lc-icon" style="width:36px;height:36px;stroke:#fff"></i>',title:"Orthodontics & Braces",sub:"Straighten your smile with confidence",
     desc:"Our orthodontic treatments are designed to give you a perfectly aligned smile with complete price transparency. We offer metal, ceramic, and self-ligating braces tailored to your needs and budget. Every treatment plan is customised — no one-size-fits-all approach.",
     ft:"What makes us different",
     f:["No hidden costs — transparent pricing from day one","Free retainers provided at end of treatment","Interest-free EMI options available","Same day appointments — we value your time","Experienced orthodontists with a gentle approach","Suitable for kids, teens, and adults"]},
-  invisalign:{icon:"💎",title:"Invisalign Clear Aligners",sub:"Invisible. Removable. Comfortable.",
+  invisalign:{icon:'<i data-lucide="gem" class="lc-icon" style="width:36px;height:36px;stroke:#fff"></i>',title:"Invisalign Clear Aligners",sub:"Invisible. Removable. Comfortable.",
     desc:"Invisalign uses a series of custom-made, nearly invisible aligners to gradually move your teeth into position — with no wires or brackets. Live your life freely while your smile is quietly transforming.",
     ft:"Why choose clear aligners?",
     f:["Virtually invisible — no one will know you are wearing them","Removable — eat, drink, and clean teeth completely normally","Comfortable — smooth edges, no metal irritation","Fewer clinic visits than traditional braces","Custom-crafted precisely for your unique smile","Suitable for mild to moderate orthodontic cases"],
     extra:"table"},
-  implants:{icon:"⚙️",title:"Dental Implants",sub:"Permanent teeth that look & feel natural",
+  implants:{icon:'<i data-lucide="settings-2" class="lc-icon" style="width:36px;height:36px;stroke:#fff"></i>',title:"Dental Implants",sub:"Permanent teeth that look & feel natural",
     desc:"Dental implants are titanium posts placed into your jawbone, acting as artificial roots that support lifelike crowns. The result looks, feels, and functions exactly like your natural teeth — permanently.",
     ft:"Our implant promise",
     f:["Stress-free implant journey — guided every step of the way","Highest success rate achieved with premium implant systems","Natural-looking, permanent solution for missing teeth","Prevents bone loss and preserves your facial structure","No impact on neighbouring healthy teeth","With proper care, implants can last a lifetime"]},
-  rct:{icon:"🩺",title:"Root Canal Treatment",sub:"Pain-free, fast, done by specialists",
+  rct:{icon:'<i data-lucide="stethoscope" class="lc-icon" style="width:36px;height:36px;stroke:#fff"></i>',title:"Root Canal Treatment",sub:"Pain-free, fast, done by specialists",
     desc:"Modern root canal treatment is nothing to fear. Thanks to advanced anaesthesia and rotary techniques, it is no more uncomfortable than a routine filling. Our endodontist specialises exclusively in root canal therapy.",
     ft:"Why trust us with your root canal?",
     f:["Completely pain-free root canal process","Performed by a highly skilled endodontist (specialist)","Advanced rotary instruments for faster, cleaner results","Saves your natural tooth — avoids extraction","Most cases completed in a single visit","Gentle, patient-focused approach from start to finish"]},
-  cosmetic:{icon:"✨",title:"Cosmetic Dentistry",sub:"Your best smile is just one visit away",
+  cosmetic:{icon:'<i data-lucide="sparkles" class="lc-icon" style="width:36px;height:36px;stroke:#fff"></i>',title:"Cosmetic Dentistry",sub:"Your best smile is just one visit away",
     desc:"Whether you want a brighter smile, a complete makeover, or a simple clean-up, our cosmetic dental treatments give you the confidence to smile freely every single day. Your smile is our canvas.",
     ft:"Our cosmetic treatments include",
     f:["Teeth Whitening — professional-grade brightening in one session","Teeth Cleaning (Scaling & Polishing) — remove stains and plaque","Cosmetic Treatment with Braces — align and beautify together","Dental Veneers — transform shape and colour of teeth","Smile Makeovers — full aesthetic redesign of your smile","Gum Contouring — reshape gumline for a perfectly balanced smile"]},
-  pediatric:{icon:"👶",title:"Pediatric Dentistry",sub:"Gentle, friendly care for little smiles",
+  pediatric:{icon:'<i data-lucide="baby" class="lc-icon" style="width:36px;height:36px;stroke:#fff"></i>',title:"Pediatric Dentistry",sub:"Gentle, friendly care for little smiles",
     desc:"Children deserve a dental experience that is positive, reassuring, and even fun! Our pediatric dental approach builds healthy habits early while keeping every child calm, comfortable, and smiling throughout.",
     ft:"Our approach for children",
     f:["Child-friendly environment designed to reduce dental anxiety","Gentle techniques specially tailored for young patients","Preventive care — fluoride treatments, fissure sealants","Early orthodontic assessment to catch issues before they worsen","Parent education on children's oral hygiene routines","Pain-free procedures using the latest pediatric techniques"]},
-  tmj:{icon:"🫀",title:"TMJ / Jaw Pain Treatment",sub:"Relief from jaw pain, clicking & headaches",
+  tmj:{icon:'<i data-lucide="activity" class="lc-icon" style="width:36px;height:36px;stroke:#fff"></i>',title:"TMJ / Jaw Pain Treatment",sub:"Relief from jaw pain, clicking & headaches",
     desc:"TMJ (Temporomandibular Joint) disorders cause jaw pain, clicking sounds, difficulty chewing, and even chronic headaches. Our specialists identify and treat the true root cause — delivering lasting, meaningful relief.",
     ft:"Conditions we treat",
     f:["Jaw pain and soreness around the joint area","Clicking or popping sounds when opening or closing mouth","Difficulty or discomfort while chewing food","Teeth grinding (bruxism) and clenching habits","Jaw locking or limited mouth opening","Headaches and neck pain linked to jaw tension"]}
 };
 
-var CTABLE='<div style="margin-top:1.2rem"><p class="m-ft">Braces vs. Clear Aligners — Comparison</p><table class="ctable"><thead><tr><th>Feature</th><th>🦷 Braces</th><th>💎 Aligners</th></tr></thead><tbody><tr><td class="colf">Visibility</td><td>Visible metal/ceramic</td><td>Nearly invisible</td></tr><tr><td class="colf">Removable</td><td>No</td><td>Yes — anytime</td></tr><tr><td class="colf">Diet Restrictions</td><td>Avoid hard/sticky foods</td><td>No restrictions at all</td></tr><tr><td class="colf">Cleaning</td><td>Needs special tools</td><td>Easy — remove and clean</td></tr><tr><td class="colf">Comfort</td><td>Adjustment period</td><td>Smooth, comfortable fit</td></tr><tr><td class="colf">Clinic Visits</td><td>Every 4–6 weeks</td><td>Every 6–8 weeks</td></tr><tr><td class="colf">Best For</td><td>Complex corrections</td><td>Mild to moderate cases</td></tr></tbody></table></div>';
+var CTABLE='<div style="margin-top:1.2rem"><p class="m-ft">Braces vs. Clear Aligners — Comparison</p><table class="ctable"><thead><tr><th>Feature</th><th>Braces</th><th>Aligners</th></tr></thead><tbody><tr><td class="colf">Visibility</td><td>Visible metal/ceramic</td><td>Nearly invisible</td></tr><tr><td class="colf">Removable</td><td>No</td><td>Yes — anytime</td></tr><tr><td class="colf">Diet Restrictions</td><td>Avoid hard/sticky foods</td><td>No restrictions at all</td></tr><tr><td class="colf">Cleaning</td><td>Needs special tools</td><td>Easy — remove and clean</td></tr><tr><td class="colf">Comfort</td><td>Adjustment period</td><td>Smooth, comfortable fit</td></tr><tr><td class="colf">Clinic Visits</td><td>Every 4–6 weeks</td><td>Every 6–8 weeks</td></tr><tr><td class="colf">Best For</td><td>Complex corrections</td><td>Mild to moderate cases</td></tr></tbody></table></div>';
 
 function openModal(k){
   var s=SVC[k];if(!s)return;
-  document.getElementById("mIcon").textContent=s.icon;
+  document.getElementById("mIcon").innerHTML=s.icon;
+  lucide.createIcons({nodes:[document.getElementById("mIcon")]});
   document.getElementById("mTitle").textContent=s.title;
   document.getElementById("mSub").textContent=s.sub;
   document.getElementById("mDesc").textContent=s.desc;
@@ -1538,6 +1566,8 @@ function handleFormSubmit(e) {
       doWA(encodeURIComponent('Hi, I\'d like to book an appointment at Sahara Dental Care.\nName: ' + name + '\nPhone: ' + phone + '\nTreatment: ' + service));
     });
 }
+
+lucide.createIcons();
 </script>
 
 <!-- Google Analytics 4 -->
