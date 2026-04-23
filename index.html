@@ -1344,7 +1344,8 @@ body.section-mode .nav-links .nav-tab:not(.active){opacity:.6}
     </form>
     <div class="form-success" id="formSuccess">
       <span class="fs-icon"><i data-lucide="circle-check" class="lc-icon"></i></span>
-      <p><strong>Request received!</strong><br>We'll reach out to confirm your appointment via WhatsApp or call shortly.</p>
+      <p><strong>Request received!</strong><br>We've sent an email to our team. To get a faster confirmation, click the button below to message us on WhatsApp:</p>
+      <button class="mwa" style="margin-top:1.2rem;width:100%;max-width:300px" onclick="triggerApptWA()">Message on WhatsApp</button>
     </div>
   </div>
 </div>
@@ -1661,6 +1662,20 @@ document.querySelectorAll(".rv").forEach(function(el){ro.observe(el);});
 })();
 
 // ── APPOINTMENT FORM HANDLER ──
+function triggerApptWA() {
+  var form = document.getElementById('apptForm');
+  var data = new FormData(form);
+  var name = data.get('name') || '';
+  var treat = data.get('service') || 'General checkup';
+  var time = data.get('preferred_time') || 'Any time';
+  var msg = encodeURIComponent("Hi Sahara Dental Care, I'd like to book an appointment.\n\n" +
+            "*Name:* " + name + "\n" +
+            "*Treatment:* " + treat + "\n" +
+            "*Preferred Time:* " + time + "\n\n" +
+            "Please confirm my slot.");
+  doWA(msg);
+}
+
 function handleFormSubmit(e) {
   e.preventDefault();
   var form = document.getElementById('apptForm');
@@ -1671,22 +1686,32 @@ function handleFormSubmit(e) {
     gtag('event', 'appointment_form_submit', { event_category: 'conversion' });
   }
 
+  // Visual feedback: disable button
+  var btn = form.querySelector('.btn-submit');
+  var originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
   fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
     .then(function(res) {
       if (res.ok) {
+        // SUCCESS: Show success section
         form.style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
+        
+        // AUTOMATIC WHATSAPP REDIRECT:
+        // We wait 1.5s so they can see the success message first
+        setTimeout(function(){
+          triggerApptWA();
+        }, 1500);
       } else {
         throw new Error('Server error: ' + res.status);
       }
     })
     .catch(function(err) {
       console.error('Form submission failed:', err);
-      // Fallback: open WhatsApp with details
-      var name = data.get('name') || '';
-      var phone = data.get('phone') || '';
-      var service = data.get('service') || 'General enquiry';
-      doWA(encodeURIComponent('Hi, I\'d like to book an appointment at Sahara Dental Care.\nName: ' + name + '\nPhone: ' + phone + '\nTreatment: ' + service));
+      // Fallback: Just open WhatsApp directly if the email service fails
+      triggerApptWA();
     });
 }
 
